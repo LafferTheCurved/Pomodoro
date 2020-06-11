@@ -6,7 +6,9 @@ let forwardButton= document.querySelector('.fa-forward');
 let circle = document.querySelector(".circle");
 let sess = document.querySelector("#session");
 let roundNumber = document.querySelector("#rounds");
-
+let bars = document.querySelector('#bars');
+let settingsPage = document.querySelector('.settings-page');
+settingsPage.style.display = "none";
 
 let type = 'Work';
 let isClockRunning = false;
@@ -58,6 +60,19 @@ function togglePlayButton(){
     playButton.classList.toggle("fa-pause");
 }
 
+function toggleMenuButton(){
+    bars.classList.toggle("fa-bars");
+    bars.classList.toggle("fa-times");
+}
+
+function toggleDisplay(){
+    if(settingsPage.style.display === "none"){
+        settingsPage.style.display = "flex";
+    }else{
+        settingsPage.style.display = "none";
+    }
+}
+
 function stepDown() {
     if(timeLeft === 0){
         if(type === "Work"){
@@ -102,3 +117,8 @@ backwardButton.addEventListener("click", () => {
 forwardButton.addEventListener("click", () => {
     timeLeft = 0;
 });
+
+bars.addEventListener("click", () => {
+    toggleDisplay();
+    toggleMenuButton();
+})
