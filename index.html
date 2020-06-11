@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 <body>
+    <div class="settings-page">
+        <div class="slider">
+            <div class="labels">
+                <div class="type-label">Work</div>
+                <div class="time-label">25:00</div>            
+            </div>
+            <input type="range" id="points" name="points" min="5" max="60">             
+        </div>
+        <div class="slider">
+            <div class="labels">
+                <div class="type-label">Break</div>
+                <div class="time-label">05:00</div>            
+            </div>
+            <input type="range" id="points" name="points" min="1" max="20">             
+        </div>
+        <div class="slider">
+            <div class="labels">
+                <div class="type-label">Rounds</div>
+                <div class="time-label">4</div>            
+            </div>
+            <input type="range" id="points" name="points" min="1" max="12">             
+        </div>
+        <div class="buttons-settings">
+            <button class= "reset" id= "default">Default</button>
+            <button class="reset" id="reset-session">Reset</button>
+        </div>
+    </div>
     <div class="clock-page">
         <i class="fas fa-bars"></i>
         <div class="container">
@@ -25,7 +52,6 @@
             </div>
         </div>
     </div>
-    <div class="settings-page"></div>
     <script src= "script.js"></script>
 </body>
 </html>
