@@ -12,24 +12,25 @@
         <div class="slider">
             <div class="labels">
                 <div class="type-label">Work</div>
-                <div class="time-label">25:00</div>            
+                <div class="time-label" id="output-work">25:00</div>            
             </div>
             <input class="slide" value= "25" type="range" id="points-work" min="5" max="60">             
         </div>
         <div class="slider">
             <div class="labels">
                 <div class="type-label">Break</div>
-                <div class="time-label">05:00</div>            
+                <div class="time-label" id="output-break">05:00</div>            
             </div>
             <input class="slide" value= "5" type="range" id="points-break" min="1" max="20">             
         </div>
         <div class="slider">
             <div class="labels">
                 <div class="type-label">Rounds</div>
-                <div class="time-label">4</div>            
+                <div class="time-label" id="output-rounds">4</div>            
             </div>
             <input class="slide" value= "4" type="range" id="points-rounds" min="1" max="12">             
         </div>
+        <label id= "longBreak">Long Break<input id="square" type= "checkbox"><span class="checkmark"></span></label>
         <div class="buttons-settings">
             <button class= "reset" id= "default">Default</button>
             <button class="reset" id="reset-session">Reset</button>
