@@ -13,22 +13,6 @@ body{
     color:white;
 }
 
-.settings-page{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(35,33,33);
-    background: linear-gradient(180deg, rgba(35,33,33,1) 0%, rgba(15,14,14,0.97) 100%);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttons-settings{
-    display: flex;
-}
-
 .labels{
     display: flex;
     font-size: 1rem;
@@ -41,82 +25,6 @@ body{
     border-radius: 4px;
     background-color:rgba(15,14,14,1);
     padding: 0 0.5rem;
-}
-
-.slider{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.slide{
-    -webkit-appearance: sliderthumb-horizontal;  /* Override default CSS styles */
-    appearance: sliderthumb-horizontal;
-    width: 80%;
-    height: 4px;
-    outline: none;
-    margin: 15px 0 3rem 0;
-}
-
-.slide::-webkit-slider-thumb {
-    -webkit-appearance: sliderthumb-horizontal;  /* Override default CSS styles */
-    appearance: sliderthumb-horizontal;
-    border-radius: 50%;
-    border: none;
-    height: 14px;
-    width: 14px;
-    cursor: pointer; /* Cursor on hover */
-}
-  
-.slide::-moz-range-thumb {
-    -webkit-appearance: sliderthumb-horizontal;  /* Override default CSS styles */
-    appearance: sliderthumb-horizontal;
-    border-radius: 50%;
-    border: none;
-    height: 14px;
-    width: 14px;
-    cursor: pointer; /* Cursor on hover */
-}
-
-#points-work{
-    background: #e7363e;
-}
-
-#points-work::-webkit-slider-thumb, #points-work::-moz-range-thumb{
-    background: #c82f36;
-}
-
-#points-break{
-    background: #56f25a;
-}
-
-#points-break::-webkit-slider-thumb, #points-break::-moz-range-thumb{
-    background: #4bd34f;
-}
-
-#points-rounds{
-    background: purple;
-}
-
-#points-rounds::-webkit-slider-thumb, #points-rounds::-moz-range-thumb{
-    background: #610061;
-}
-
-.reset{
-    border: none;
-    border-radius: 4px;
-    margin: 0 15px;
-    background-color:rgba(15,14,14,1);
-    color: white;
-    width: 90px;
-    padding: 0.75rem 0;
-    cursor: pointer;
-}
-
-.reset:hover{
-    background-color: #070707;
 }
 
 .clock-page{
@@ -137,7 +45,8 @@ body{
     justify-content: center;
     
 }
-.circle {
+
+.circle{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +56,8 @@ body{
     height: 15rem;
     width: 15rem;
 }
-.info {
+
+.info{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,72 +78,8 @@ body{
 .fas{
     margin: 0 20px 0 20px;
 }
-p {
+
+p{
     font-size:1rem;
     color: #b6b6b6;
-}
-
-#bars{
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-#longBreak{
-    font-size: 1rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 3rem;
-}
-
-#square{
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark{
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
-/* On mouse-over, add a grey background color */
-#longBreak:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-#longBreak input:checked ~ .checkmark {
-    background-color: rgb(70, 70, 70);
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    display: none;
-}
-  
-/* Show the checkmark when checked */
-#longBreak input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-#longBreak .checkmark:after {
-    width: 11.5px;
-    height: 11.5px;
-    border-radius: 50%;
-    background: white;
-    margin-left: 7px;
-    margin-top: 7px;
-    background-size: cover;
 }
