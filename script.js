@@ -112,6 +112,19 @@ function stepDown() {
     }
 }
 
+function newSettings(newType, newWork, newBreak, newRound){
+    type = newType;
+    workRoundDuration = parseInt(newWork)*60;
+    breakRoundDuration = parseInt(newBreak)*60;
+    roundsPerSession = newRound;
+    timeLeft = workRoundDuration;
+    isClockRunning = false;
+    toggleDisplay();
+    toggleMenuButton();
+    timer.textContent = displayTime();
+    roundNumber.textContent = `1/${roundsPerSession}`;
+    console.log("hey");
+}
 
 //event listeners
 playButton.addEventListener("click", () => {
@@ -153,5 +166,5 @@ pointsBreak.addEventListener("input", () => {
 });
 
 resetSession.addEventListener("click", () => {
-    //reset
+    newSettings("short", pointsWork.value, pointsBreak.value, pointsRounds.value);
 });
