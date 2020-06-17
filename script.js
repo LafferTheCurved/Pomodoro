@@ -6,17 +6,7 @@ let forwardButton= document.querySelector('.fa-forward');
 let circle = document.querySelector(".circle");
 let sess = document.querySelector("#session");
 let roundNumber = document.querySelector("#rounds");
-let bars = document.querySelector('#bars');
-let settingsPage = document.querySelector('.settings-page');
-let pointsRounds = document.querySelector("#points-rounds");
-let pointsWork = document.querySelector('#points-work');
-let pointsBreak = document.querySelector('#points-break');
-let outputWork = document.querySelector('#output-work');
-let outputBreak = document.querySelector('#output-break');
-let outputRounds = document.querySelector('#output-rounds');
-let resetSession = document.querySelector('#reset-session');
 
-settingsPage.style.display = "none";
 let type = 'Work';
 let isClockRunning = false;
 let workRoundDuration = 25*60;
@@ -28,10 +18,12 @@ let roundsPerSession = 4;
 const toggleClock = (reset) => {
     if(reset){
        clearInterval(interval);
-       if(type === "Break"){
+       if(type === "Break" && numberOfBreaks !== roundsPerSession){
            timeLeft = breakRoundDuration;
-       }else{
+       }else if(type === "Work"){
            timeLeft = workRoundDuration;
+       }else{
+           timeLeft = breakRoundDuration*3;
        }
        timer.textContent = displayTime();
        if(isClockRunning === true){
@@ -90,7 +82,7 @@ function stepDown() {
             sess.textContent = "Break";
             numberOfBreaks++;
             if(numberOfBreaks === roundsPerSession){
-                timeLeft = breakRoundDuration*2;
+                timeLeft = breakRoundDuration*3;
             }else{
                 timeLeft = breakRoundDuration;
             }
@@ -112,20 +104,6 @@ function stepDown() {
     }
 }
 
-function newSettings(newType, newWork, newBreak, newRound){
-    type = newType;
-    workRoundDuration = parseInt(newWork)*60;
-    breakRoundDuration = parseInt(newBreak)*60;
-    roundsPerSession = newRound;
-    timeLeft = workRoundDuration;
-    isClockRunning = false;
-    toggleDisplay();
-    toggleMenuButton();
-    timer.textContent = displayTime();
-    roundNumber.textContent = `1/${roundsPerSession}`;
-    console.log("hey");
-}
-
 //event listeners
 playButton.addEventListener("click", () => {
     toggleClock();
@@ -138,33 +116,4 @@ backwardButton.addEventListener("click", () => {
 
 forwardButton.addEventListener("click", () => {
     timeLeft = 0;
-});
-
-bars.addEventListener("click", () => {
-    toggleDisplay();
-    toggleMenuButton();
-});
-
-pointsWork.addEventListener("input", () => {
-    let p = pointsWork.value;
-    if(p<10){
-        p = `0${p}`;
-    }
-    outputWork.textContent = `${p}:00`;
-});
-
-pointsRounds.addEventListener("input", () => {
-    outputRounds.textContent = pointsRounds.value;
-});
-
-pointsBreak.addEventListener("input", () => {
-    let p = pointsBreak.value;
-    if(p<10){
-        p = `0${p}`;
-    }
-    outputBreak.textContent = `${p}:00`;
-});
-
-resetSession.addEventListener("click", () => {
-    newSettings("short", pointsWork.value, pointsBreak.value, pointsRounds.value);
 });
